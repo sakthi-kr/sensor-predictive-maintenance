@@ -38,7 +38,7 @@ docs/
 
 ## Current Status
 
-Project skeleton created. Data processing and model development will be added in later phases.
+Baseline sensor-data pipeline in progress
 
 ## Planned Results
 
