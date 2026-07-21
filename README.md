@@ -1,6 +1,8 @@
 # Sensor Predictive Maintenance
 
-This project develops a machine learning workflow for classifying bearing condition from vibration sensor data. It is designed as an applied AI/ML portfolio project focused on industrial sensor data, feature extraction, model development, testing, validation, and predictive maintenance.
+## Summary
+
+A reproducible machine-learning pipeline for bearing fault classification from vibration sensor data. The project loads CWRU `.mat` files, extracts time-domain and frequency-domain features, trains a Random Forest baseline model, evaluates classification performance, and documents validation limitations such as possible leakage from window-level splitting.
 
 ## Motivation
 
