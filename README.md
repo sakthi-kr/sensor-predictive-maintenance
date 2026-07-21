@@ -184,9 +184,19 @@ PYTHONPATH=. pytest
 
 ## Current Results
 
-The first baseline Random Forest model produces a perfect confusion matrix on the initial four-file dataset.
+The first baseline Random Forest model produced perfect classification on the initial four-file dataset.
 
-However, this result should be interpreted carefully. The current baseline uses a window-level random train/test split, which is useful for checking that the pipeline works, but it can overestimate performance because windows from the same original vibration signal may be highly similar.
+This result should be interpreted carefully. The current baseline uses a window-level random train/test split, which is useful for checking that the full pipeline works, but it can overestimate performance because windows from the same original vibration signal may be highly similar.
+
+### Confusion Matrix
+
+![Confusion Matrix](results/confusion_matrix.png)
+
+### Feature Importance
+
+![Feature Importance](results/feature_importance.png)
+
+The strongest features in the first baseline include dominant frequency, standard deviation, spectral energy, peak-to-peak amplitude, maximum value, and RMS. This is physically reasonable because bearing faults often change both vibration amplitude and frequency content.
 
 Current result files:
 
