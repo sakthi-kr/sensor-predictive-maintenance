@@ -211,6 +211,13 @@ results/metrics.json
 
 The current baseline is a first development version. It is not yet a fully leakage-aware industrial validation.
 
+Detailed validation and experiment plans are documented here:
+
+```text
+docs/validation_strategy.md
+docs/experiment_plan.md
+```
+
 Main limitation:
 
 - Windows from the same original `.mat` signal can appear in both training and test sets.
@@ -262,6 +269,22 @@ This project is for applied learning and portfolio demonstration. It is not inte
 - sensor calibration checks
 - deployment-specific monitoring
 - domain expert review
+
+
+## Experiment Roadmap
+
+Planned experiment stages:
+
+1. Baseline Random Forest model on engineered vibration features
+2. Classical model comparison: Logistic Regression, Random Forest, SVM, and gradient boosting
+3. Feature ablation: time-domain vs frequency-domain vs combined features
+4. Leakage-aware file-level validation
+5. Load-condition generalization
+6. Fault-size generalization
+7. Raw-signal 1D CNN comparison
+
+The focus is not only on improving accuracy, but on making the validation more realistic and industrially meaningful.
+
 
 ## Future Improvements
 
