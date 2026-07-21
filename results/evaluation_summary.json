@@ -1,0 +1,44 @@
+{
+    "model_type": "RandomForestClassifier",
+    "n_test_samples": 100,
+    "classification_report": {
+        "ball_fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 25.0
+        },
+        "inner_race_fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 25.0
+        },
+        "normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 25.0
+        },
+        "outer_race_fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 25.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 100.0
+        },
+        "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 100.0
+        }
+    },
+    "validation_note": "This evaluation uses the same window-level random split as the first baseline training run. It is useful for checking the pipeline, but it may overestimate performance because windows from the same original signal can be similar. A future version should evaluate across files, fault sizes, or operating/load conditions."
+}

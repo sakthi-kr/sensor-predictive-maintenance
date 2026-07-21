@@ -1,0 +1,16 @@
+[
+    "mean",
+    "std",
+    "rms",
+    "min",
+    "max",
+    "peak_to_peak",
+    "skewness",
+    "kurtosis",
+    "crest_factor",
+    "shape_factor",
+    "dominant_frequency",
+    "spectral_centroid",
+    "spectral_bandwidth",
+    "spectral_energy"
+]

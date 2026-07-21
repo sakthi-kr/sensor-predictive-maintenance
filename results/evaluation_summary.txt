@@ -1,0 +1,10 @@
+                  precision    recall  f1-score   support
+
+      ball_fault       1.00      1.00      1.00        25
+inner_race_fault       1.00      1.00      1.00        25
+          normal       1.00      1.00      1.00        25
+outer_race_fault       1.00      1.00      1.00        25
+
+        accuracy                           1.00       100
+       macro avg       1.00      1.00      1.00       100
+    weighted avg       1.00      1.00      1.00       100

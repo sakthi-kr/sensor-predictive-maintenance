@@ -1,0 +1,62 @@
+{
+    "model_type": "RandomForestClassifier",
+    "accuracy": 1.0,
+    "n_train_samples": 300,
+    "n_test_samples": 100,
+    "feature_columns": [
+        "mean",
+        "std",
+        "rms",
+        "min",
+        "max",
+        "peak_to_peak",
+        "skewness",
+        "kurtosis",
+        "crest_factor",
+        "shape_factor",
+        "dominant_frequency",
+        "spectral_centroid",
+        "spectral_bandwidth",
+        "spectral_energy"
+    ],
+    "classification_report": {
+        "ball_fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 25.0
+        },
+        "inner_race_fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 25.0
+        },
+        "normal": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 25.0
+        },
+        "outer_race_fault": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 25.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 100.0
+        },
+        "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 100.0
+        }
+    },
+    "validation_note": "This first baseline uses window-level random train/test splitting. This is useful for pipeline development but may overestimate performance because windows from the same original signal can be similar. A later version should use a more leakage-aware split."
+}
