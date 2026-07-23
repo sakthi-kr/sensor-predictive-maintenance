@@ -1,0 +1,13 @@
+strategy,strategy_name,class_label,precision,recall,f1_score,support
+random_window,Random window split,ball_fault,1.0,1.0,1.0,200
+random_window,Random window split,inner_race_fault,1.0,1.0,1.0,200
+random_window,Random window split,normal,1.0,1.0,1.0,200
+random_window,Random window split,outer_race_fault,1.0,1.0,1.0,200
+grouped_recording,Grouped recording CV,ball_fault,1.0,1.0,1.0,200
+grouped_recording,Grouped recording CV,inner_race_fault,1.0,1.0,1.0,200
+grouped_recording,Grouped recording CV,normal,1.0,1.0,1.0,200
+grouped_recording,Grouped recording CV,outer_race_fault,1.0,1.0,1.0,200
+leave_one_load_out,Leave-one-load-out,ball_fault,1.0,1.0,1.0,200
+leave_one_load_out,Leave-one-load-out,inner_race_fault,1.0,1.0,1.0,200
+leave_one_load_out,Leave-one-load-out,normal,1.0,1.0,1.0,200
+leave_one_load_out,Leave-one-load-out,outer_race_fault,1.0,1.0,1.0,200

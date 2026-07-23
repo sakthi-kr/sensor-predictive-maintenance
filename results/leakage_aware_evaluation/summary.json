@@ -1,0 +1,97 @@
+{
+  "dataset": {
+    "feature_table": "results/cwru_load_features.csv",
+    "n_windows": 800,
+    "n_source_recordings": 16,
+    "n_classes": 4,
+    "loads_hp": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "windows_per_recording": 50
+  },
+  "model": {
+    "type": "RandomForestClassifier",
+    "n_estimators": 200,
+    "class_weight": "balanced",
+    "random_state_base": 42
+  },
+  "strategies": {
+    "random_window": {
+      "strategy_name": "Random window split",
+      "folds": 4,
+      "window_accuracy_mean": 1.0,
+      "window_accuracy_std": 0.0,
+      "window_balanced_accuracy_mean": 1.0,
+      "window_macro_f1_mean": 1.0,
+      "window_macro_f1_std": 0.0,
+      "recording_accuracy_mean": 1.0,
+      "recording_accuracy_std": 0.0,
+      "recording_macro_f1_mean": 1.0,
+      "maximum_recording_overlap": 16
+    },
+    "grouped_recording": {
+      "strategy_name": "Grouped recording CV",
+      "folds": 4,
+      "window_accuracy_mean": 1.0,
+      "window_accuracy_std": 0.0,
+      "window_balanced_accuracy_mean": 1.0,
+      "window_macro_f1_mean": 1.0,
+      "window_macro_f1_std": 0.0,
+      "recording_accuracy_mean": 1.0,
+      "recording_accuracy_std": 0.0,
+      "recording_macro_f1_mean": 1.0,
+      "maximum_recording_overlap": 0
+    },
+    "leave_one_load_out": {
+      "strategy_name": "Leave-one-load-out",
+      "folds": 4,
+      "window_accuracy_mean": 1.0,
+      "window_accuracy_std": 0.0,
+      "window_balanced_accuracy_mean": 1.0,
+      "window_macro_f1_mean": 1.0,
+      "window_macro_f1_std": 0.0,
+      "recording_accuracy_mean": 1.0,
+      "recording_accuracy_std": 0.0,
+      "recording_macro_f1_mean": 1.0,
+      "maximum_recording_overlap": 0
+    }
+  },
+  "generalization_gaps": {
+    "random_minus_grouped_window_accuracy": 0.0,
+    "random_minus_leave_one_load_out_window_accuracy": 0.0,
+    "random_minus_grouped_macro_f1": 0.0,
+    "random_minus_leave_one_load_out_macro_f1": 0.0
+  },
+  "leakage_checks": {
+    "random_window_maximum_overlapping_recordings": 16,
+    "grouped_recording_maximum_overlapping_recordings": 0,
+    "leave_one_load_out_maximum_overlapping_recordings": 0
+  },
+  "interpretation": {
+    "random_window": "Development baseline. Windows from the same source recording can occur in both training and test sets.",
+    "grouped_recording": "Leakage-aware recording-level evaluation. A source recording never appears in both training and test sets within a fold.",
+    "leave_one_load_out": "Operating-condition evaluation. The model is trained on three motor loads and tested on one unseen load.",
+    "important_dataset_limitation": "Normal recordings were originally sampled at 48 kHz and resampled to 12 kHz, while the selected fault recordings were collected at 12 kHz. Results may still reflect acquisition-domain differences in addition to bearing condition."
+  },
+  "output_files": {
+    "fold_metrics_csv": "results/leakage_aware_evaluation/fold_metrics.csv",
+    "strategy_comparison_csv": "results/leakage_aware_evaluation/strategy_comparison.csv",
+    "window_predictions_csv": "results/leakage_aware_evaluation/window_predictions.csv",
+    "recording_predictions_csv": "results/leakage_aware_evaluation/recording_predictions.csv",
+    "strategy_comparison_plot": "results/leakage_aware_evaluation/strategy_comparison.png",
+    "leave_one_load_out_plot": "results/leakage_aware_evaluation/leave_one_load_out_by_load.png",
+    "classification_reports": {
+      "random_window": "results/leakage_aware_evaluation/classification_report_random_window.txt",
+      "grouped_recording": "results/leakage_aware_evaluation/classification_report_grouped_recording.txt",
+      "leave_one_load_out": "results/leakage_aware_evaluation/classification_report_leave_one_load_out.txt"
+    },
+    "confusion_matrices": {
+      "random_window": "results/leakage_aware_evaluation/confusion_matrix_random_window.png",
+      "grouped_recording": "results/leakage_aware_evaluation/confusion_matrix_grouped_recording.png",
+      "leave_one_load_out": "results/leakage_aware_evaluation/confusion_matrix_leave_one_load_out.png"
+    }
+  }
+}

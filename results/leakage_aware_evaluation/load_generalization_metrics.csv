@@ -1,0 +1,5 @@
+held_out_load_hp,fold,n_train_recordings,n_test_recordings,window_accuracy,window_balanced_accuracy,window_macro_f1,recording_accuracy,recording_macro_f1,overlapping_recording_count,test_recordings
+0,1,12,4,1.0,1.0,1.0,1.0,1.0,0,105.mat;118.mat;130.mat;97.mat
+1,2,12,4,1.0,1.0,1.0,1.0,1.0,0,106.mat;119.mat;131.mat;98.mat
+2,3,12,4,1.0,1.0,1.0,1.0,1.0,0,107.mat;120.mat;132.mat;99.mat
+3,4,12,4,1.0,1.0,1.0,1.0,1.0,0,100.mat;108.mat;121.mat;133.mat

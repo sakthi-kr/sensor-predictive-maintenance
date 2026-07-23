@@ -1,0 +1,17 @@
+file_name,label,fault_type,fault_diameter_in,outer_race_position,load_hp,approx_rpm,sample_rate_hz,dataset_section,local_path,download_url
+97.mat,normal,normal,0.000,not_applicable,0,1797,48000,normal_baseline,data/raw/cwru/normal/97.mat,https://engineering.case.edu/sites/default/files/97.mat
+98.mat,normal,normal,0.000,not_applicable,1,1772,48000,normal_baseline,data/raw/cwru/normal/98.mat,https://engineering.case.edu/sites/default/files/98.mat
+99.mat,normal,normal,0.000,not_applicable,2,1750,48000,normal_baseline,data/raw/cwru/normal/99.mat,https://engineering.case.edu/sites/default/files/99.mat
+100.mat,normal,normal,0.000,not_applicable,3,1730,48000,normal_baseline,data/raw/cwru/normal/100.mat,https://engineering.case.edu/sites/default/files/100.mat
+105.mat,inner_race_fault,inner_race,0.007,not_applicable,0,1797,12000,12k_drive_end,data/raw/cwru/inner_race_fault/105.mat,https://engineering.case.edu/sites/default/files/105.mat
+106.mat,inner_race_fault,inner_race,0.007,not_applicable,1,1772,12000,12k_drive_end,data/raw/cwru/inner_race_fault/106.mat,https://engineering.case.edu/sites/default/files/106.mat
+107.mat,inner_race_fault,inner_race,0.007,not_applicable,2,1750,12000,12k_drive_end,data/raw/cwru/inner_race_fault/107.mat,https://engineering.case.edu/sites/default/files/107.mat
+108.mat,inner_race_fault,inner_race,0.007,not_applicable,3,1730,12000,12k_drive_end,data/raw/cwru/inner_race_fault/108.mat,https://engineering.case.edu/sites/default/files/108.mat
+118.mat,ball_fault,ball,0.007,not_applicable,0,1797,12000,12k_drive_end,data/raw/cwru/ball_fault/118.mat,https://engineering.case.edu/sites/default/files/118.mat
+119.mat,ball_fault,ball,0.007,not_applicable,1,1772,12000,12k_drive_end,data/raw/cwru/ball_fault/119.mat,https://engineering.case.edu/sites/default/files/119.mat
+120.mat,ball_fault,ball,0.007,not_applicable,2,1750,12000,12k_drive_end,data/raw/cwru/ball_fault/120.mat,https://engineering.case.edu/sites/default/files/120.mat
+121.mat,ball_fault,ball,0.007,not_applicable,3,1730,12000,12k_drive_end,data/raw/cwru/ball_fault/121.mat,https://engineering.case.edu/sites/default/files/121.mat
+130.mat,outer_race_fault,outer_race,0.007,centered_6_oclock,0,1797,12000,12k_drive_end,data/raw/cwru/outer_race_fault/130.mat,https://engineering.case.edu/sites/default/files/130.mat
+131.mat,outer_race_fault,outer_race,0.007,centered_6_oclock,1,1772,12000,12k_drive_end,data/raw/cwru/outer_race_fault/131.mat,https://engineering.case.edu/sites/default/files/131.mat
+132.mat,outer_race_fault,outer_race,0.007,centered_6_oclock,2,1750,12000,12k_drive_end,data/raw/cwru/outer_race_fault/132.mat,https://engineering.case.edu/sites/default/files/132.mat
+133.mat,outer_race_fault,outer_race,0.007,centered_6_oclock,3,1730,12000,12k_drive_end,data/raw/cwru/outer_race_fault/133.mat,https://engineering.case.edu/sites/default/files/133.mat

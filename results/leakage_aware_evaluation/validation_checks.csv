@@ -1,0 +1,14 @@
+name,passed,details
+required_files,True,All required files exist.
+dataset_dimensions,True,"Observed={'n_windows': 800, 'n_source_recordings': 16, 'n_classes': 4, 'windows_per_recording': 50}; expected={'n_windows': 800, 'n_source_recordings': 16, 'n_classes': 4, 'windows_per_recording': 50}"
+strategy_set,True,"Observed=['grouped_recording', 'leave_one_load_out', 'random_window']"
+four_folds_per_strategy,True,"Fold counts={'grouped_recording': 4, 'leave_one_load_out': 4, 'random_window': 4}"
+metric_ranges,True,"All metrics are finite and within [0, 1]."
+recording_overlap,True,"Observed={'grouped_recording': 0, 'leave_one_load_out': 0, 'random_window': 16}; expected={'random_window': 16, 'grouped_recording': 0, 'leave_one_load_out': 0}"
+tied_load_reporting,True,"tied=True, hardest=None, easiest=None"
+readme_current,True,README contains the current experiment.
+readme_no_stale_claims,True,No stale baseline-only claims remain.
+data_documentation,True,Dataset documentation is current.
+report_rendered,True,The technical report contains rendered values.
+portable_documentation_paths,True,No machine-specific absolute paths were found.
+plot_files,True,All required plots are non-empty.

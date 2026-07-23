@@ -1,0 +1,4 @@
+strategy,strategy_name,recording_predictions,correct_recordings,incorrect_recordings,recording_accuracy,mean_confidence,recordings_seen_in_training
+random_window,Random window split,64,64,0,1.0,0.999776606856685,64
+grouped_recording,Grouped recording CV,16,16,0,1.0,0.98618125,0
+leave_one_load_out,Leave-one-load-out,16,16,0,1.0,0.9795,0

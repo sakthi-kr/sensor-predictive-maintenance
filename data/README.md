@@ -1,73 +1,42 @@
-# Dataset Instructions
+# CWRU Dataset Instructions
 
 This project uses the Case Western Reserve University bearing vibration dataset.
+The raw MATLAB files are external data and are not committed to this repository.
+The versioned manifest stores the source filename, class, load, approximate speed, original sample rate, local path, and official download URL.
 
-The raw dataset is not included in this repository. Download the required `.mat` files from the official CWRU Bearing Data Center.
+## Current 16-Recording Benchmark
 
-## Local Folder Structure
+| Condition | 0 HP | 1 HP | 2 HP | 3 HP |
+| --- | ---: | ---: | ---: | ---: |
+| Normal | 97.mat | 98.mat | 99.mat | 100.mat |
+| Inner-race fault, 0.007 in | 105.mat | 106.mat | 107.mat | 108.mat |
+| Ball fault, 0.007 in | 118.mat | 119.mat | 120.mat | 121.mat |
+| Outer-race fault, 0.007 in, 6 o'clock | 130.mat | 131.mat | 132.mat | 133.mat |
 
-Create this local folder structure:
+Manifest:
 
-```text
-data/
-└── raw/
-    └── cwru/
-        ├── normal/
-        ├── inner_race_fault/
-        ├── ball_fault/
-        └── outer_race_fault/
-```
+    data/manifests/cwru_load_benchmark.csv
 
-## First Baseline Files
+## Download and Verify
 
-For the first working baseline, use these files:
+Run from the repository root:
 
-| Class | File | Local Path |
-|---|---|---|
-| normal | 97.mat | data/raw/cwru/normal/97.mat |
-| inner race fault | 105.mat | data/raw/cwru/inner_race_fault/105.mat |
-| ball fault | 118.mat | data/raw/cwru/ball_fault/118.mat |
-| outer race fault | 130.mat | data/raw/cwru/outer_race_fault/130.mat |
+    python scripts/download_cwru_load_benchmark.py
 
-## Download with Git Bash
+Verify already-downloaded files without contacting the server:
 
-Run these commands from the project root:
+    python scripts/download_cwru_load_benchmark.py --verify-only
 
-```bash
-mkdir -p data/raw/cwru/normal
-mkdir -p data/raw/cwru/inner_race_fault
-mkdir -p data/raw/cwru/ball_fault
-mkdir -p data/raw/cwru/outer_race_fault
+The downloader creates the class folders under `data/raw/cwru/`, checks that all 16 files are readable MATLAB files, finds the drive-end signal, and verifies balance across classes and loads.
 
-curl -L --fail \
-  "https://engineering.case.edu/sites/default/files/97.mat" \
-  -o data/raw/cwru/normal/97.mat
+## Sampling-Rate Standardization
 
-curl -L --fail \
-  "https://engineering.case.edu/sites/default/files/105.mat" \
-  -o data/raw/cwru/inner_race_fault/105.mat
+The selected normal recordings were originally sampled at 48 kHz.
+The selected fault recordings were collected at 12 kHz.
+Normal signals are resampled to 12 kHz with polyphase anti-alias filtering before feature extraction.
+This standardizes the effective feature-extraction rate, but it cannot guarantee that every acquisition-domain difference has been removed.
 
-curl -L --fail \
-  "https://engineering.case.edu/sites/default/files/118.mat" \
-  -o data/raw/cwru/ball_fault/118.mat
+## Local Data Policy
 
-curl -L --fail \
-  "https://engineering.case.edu/sites/default/files/130.mat" \
-  -o data/raw/cwru/outer_race_fault/130.mat
-```
-
-## Verify Downloads
-
-```bash
-find data/raw/cwru -name "*.mat" -type f
-ls -lh data/raw/cwru/normal
-ls -lh data/raw/cwru/inner_race_fault
-ls -lh data/raw/cwru/ball_fault
-ls -lh data/raw/cwru/outer_race_fault
-```
-
-## Important
-
-Do not upload raw `.mat` files to GitHub.
-
-The `.gitignore` file excludes `.mat` files so the raw dataset remains local.
+Do not commit raw MATLAB files.
+The repository ignores `data/raw/` and `*.mat`, while the small manifest remains tracked for reproducibility.
