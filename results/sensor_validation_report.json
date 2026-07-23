@@ -1,0 +1,532 @@
+{
+    "schema_version": "1.0",
+    "report_name": "Sensor Predictive Maintenance Validation Report",
+    "generated_at_utc": "2026-07-23T09:25:13.744998Z",
+    "summary": {
+        "overall_passed": true,
+        "status": "PASS",
+        "total_checks": 13,
+        "passed_checks": 13,
+        "failed_checks": 0,
+        "passed_check_names": [
+            "required_columns",
+            "missing_values",
+            "infinite_values",
+            "duplicate_rows",
+            "allowed_values:label",
+            "numeric_ranges",
+            "class_balance:label",
+            "prediction_lengths",
+            "prediction_labels",
+            "probability_matrix",
+            "score_range",
+            "metric_thresholds",
+            "confusion_matrix_consistency"
+        ],
+        "failed_check_names": []
+    },
+    "metadata": {
+        "project": "sensor-predictive-maintenance",
+        "dataset": "Case Western Reserve University bearing vibration data",
+        "model_type": "RandomForestClassifier",
+        "class_labels": [
+            "ball_fault",
+            "inner_race_fault",
+            "normal",
+            "outer_race_fault"
+        ],
+        "feature_columns": [
+            "mean",
+            "std",
+            "rms",
+            "min",
+            "max",
+            "peak_to_peak",
+            "skewness",
+            "kurtosis",
+            "crest_factor",
+            "shape_factor",
+            "dominant_frequency",
+            "spectral_centroid",
+            "spectral_bandwidth",
+            "spectral_energy"
+        ],
+        "feature_table_rows": 400,
+        "test_samples": 100,
+        "window_size": 2048,
+        "step_size": 1024,
+        "sample_rate_hz": 12000,
+        "max_windows_per_file": 100,
+        "test_size": 0.25,
+        "random_state": 42,
+        "metrics": {
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "weighted_f1": 1.0
+        },
+        "known_validation_limitation": "The current baseline uses a random window-level split. Similar windows from the same original signal can occur in both training and test sets, so performance may be overestimated.",
+        "metric_threshold_interpretation": "Metric thresholds are regression checks for the current development pipeline, not production-readiness criteria."
+    },
+    "checks": [
+        {
+            "check_index": 0,
+            "name": "required_columns",
+            "passed": true,
+            "status": "PASS",
+            "message": "All 19 required columns are present.",
+            "details": {
+                "required_columns": [
+                    "label",
+                    "file_name",
+                    "signal_key",
+                    "rpm",
+                    "window_index",
+                    "mean",
+                    "std",
+                    "rms",
+                    "min",
+                    "max",
+                    "peak_to_peak",
+                    "skewness",
+                    "kurtosis",
+                    "crest_factor",
+                    "shape_factor",
+                    "dominant_frequency",
+                    "spectral_centroid",
+                    "spectral_bandwidth",
+                    "spectral_energy"
+                ],
+                "missing_columns": []
+            }
+        },
+        {
+            "check_index": 1,
+            "name": "missing_values",
+            "passed": true,
+            "status": "PASS",
+            "message": "Missing-value fractions are within the allowed limit of 0.000.",
+            "details": {
+                "row_count": 400,
+                "inspected_columns": [
+                    "label",
+                    "file_name",
+                    "signal_key",
+                    "window_index",
+                    "mean",
+                    "std",
+                    "rms",
+                    "min",
+                    "max",
+                    "peak_to_peak",
+                    "skewness",
+                    "kurtosis",
+                    "crest_factor",
+                    "shape_factor",
+                    "dominant_frequency",
+                    "spectral_centroid",
+                    "spectral_bandwidth",
+                    "spectral_energy"
+                ],
+                "missing_counts": {
+                    "label": 0,
+                    "file_name": 0,
+                    "signal_key": 0,
+                    "window_index": 0,
+                    "mean": 0,
+                    "std": 0,
+                    "rms": 0,
+                    "min": 0,
+                    "max": 0,
+                    "peak_to_peak": 0,
+                    "skewness": 0,
+                    "kurtosis": 0,
+                    "crest_factor": 0,
+                    "shape_factor": 0,
+                    "dominant_frequency": 0,
+                    "spectral_centroid": 0,
+                    "spectral_bandwidth": 0,
+                    "spectral_energy": 0
+                },
+                "missing_fractions": {
+                    "label": 0.0,
+                    "file_name": 0.0,
+                    "signal_key": 0.0,
+                    "window_index": 0.0,
+                    "mean": 0.0,
+                    "std": 0.0,
+                    "rms": 0.0,
+                    "min": 0.0,
+                    "max": 0.0,
+                    "peak_to_peak": 0.0,
+                    "skewness": 0.0,
+                    "kurtosis": 0.0,
+                    "crest_factor": 0.0,
+                    "shape_factor": 0.0,
+                    "dominant_frequency": 0.0,
+                    "spectral_centroid": 0.0,
+                    "spectral_bandwidth": 0.0,
+                    "spectral_energy": 0.0
+                },
+                "violating_columns": {},
+                "max_missing_fraction": 0.0
+            }
+        },
+        {
+            "check_index": 2,
+            "name": "infinite_values",
+            "passed": true,
+            "status": "PASS",
+            "message": "No infinite values were found.",
+            "details": {
+                "inspected_columns": [
+                    "mean",
+                    "std",
+                    "rms",
+                    "min",
+                    "max",
+                    "peak_to_peak",
+                    "skewness",
+                    "kurtosis",
+                    "crest_factor",
+                    "shape_factor",
+                    "dominant_frequency",
+                    "spectral_centroid",
+                    "spectral_bandwidth",
+                    "spectral_energy"
+                ],
+                "infinite_counts": {
+                    "mean": 0,
+                    "std": 0,
+                    "rms": 0,
+                    "min": 0,
+                    "max": 0,
+                    "peak_to_peak": 0,
+                    "skewness": 0,
+                    "kurtosis": 0,
+                    "crest_factor": 0,
+                    "shape_factor": 0,
+                    "dominant_frequency": 0,
+                    "spectral_centroid": 0,
+                    "spectral_bandwidth": 0,
+                    "spectral_energy": 0
+                },
+                "violating_columns": {}
+            }
+        },
+        {
+            "check_index": 3,
+            "name": "duplicate_rows",
+            "passed": true,
+            "status": "PASS",
+            "message": "Duplicate count 0 is within the allowed limit of 0.",
+            "details": {
+                "subset": [
+                    "file_name",
+                    "window_index"
+                ],
+                "duplicate_count": 0,
+                "duplicate_indices": [],
+                "max_duplicates": 0
+            }
+        },
+        {
+            "check_index": 4,
+            "name": "allowed_values:label",
+            "passed": true,
+            "status": "PASS",
+            "message": "Column 'label' contains only allowed values.",
+            "details": {
+                "column": "label",
+                "allowed_values": [
+                    "ball_fault",
+                    "inner_race_fault",
+                    "normal",
+                    "outer_race_fault"
+                ],
+                "observed_values": [
+                    "ball_fault",
+                    "inner_race_fault",
+                    "normal",
+                    "outer_race_fault"
+                ],
+                "unexpected_values": [],
+                "missing_count": 0,
+                "allow_missing": false
+            }
+        },
+        {
+            "check_index": 5,
+            "name": "numeric_ranges",
+            "passed": true,
+            "status": "PASS",
+            "message": "All 10 configured numeric range checks passed.",
+            "details": {
+                "configured_ranges": {
+                    "std": [
+                        0.0,
+                        null
+                    ],
+                    "rms": [
+                        0.0,
+                        null
+                    ],
+                    "peak_to_peak": [
+                        0.0,
+                        null
+                    ],
+                    "crest_factor": [
+                        0.0,
+                        null
+                    ],
+                    "shape_factor": [
+                        0.0,
+                        null
+                    ],
+                    "dominant_frequency": [
+                        0.0,
+                        6000.0
+                    ],
+                    "spectral_centroid": [
+                        0.0,
+                        6000.0
+                    ],
+                    "spectral_bandwidth": [
+                        0.0,
+                        6000.0
+                    ],
+                    "spectral_energy": [
+                        0.0,
+                        null
+                    ],
+                    "window_index": [
+                        0.0,
+                        99.0
+                    ]
+                },
+                "inclusive": true,
+                "violations": {}
+            }
+        },
+        {
+            "check_index": 6,
+            "name": "class_balance:label",
+            "passed": true,
+            "status": "PASS",
+            "message": "Target 'label' satisfies the configured class-balance requirements.",
+            "details": {
+                "target_column": "label",
+                "class_counts": {
+                    "ball_fault": 100,
+                    "inner_race_fault": 100,
+                    "normal": 100,
+                    "outer_race_fault": 100
+                },
+                "class_fractions": {
+                    "ball_fault": 0.25,
+                    "inner_race_fault": 0.25,
+                    "normal": 0.25,
+                    "outer_race_fault": 0.25
+                },
+                "class_count": 4,
+                "missing_count": 0,
+                "min_classes": 4,
+                "min_samples_per_class": 20,
+                "min_fraction_per_class": 0.2,
+                "low_count_classes": {},
+                "low_fraction_classes": {}
+            }
+        },
+        {
+            "check_index": 7,
+            "name": "prediction_lengths",
+            "passed": true,
+            "status": "PASS",
+            "message": "All model outputs contain 100 sample(s).",
+            "details": {
+                "expected_length": 100,
+                "output_lengths": {
+                    "y_true": 100,
+                    "y_pred": 100,
+                    "probabilities": 100,
+                    "scores": 100
+                },
+                "mismatched_outputs": {}
+            }
+        },
+        {
+            "check_index": 8,
+            "name": "prediction_labels",
+            "passed": true,
+            "status": "PASS",
+            "message": "All labels are within the configured allowed set.",
+            "details": {
+                "allowed_labels": [
+                    "ball_fault",
+                    "inner_race_fault",
+                    "normal",
+                    "outer_race_fault"
+                ],
+                "observed_values": {
+                    "y_pred": [
+                        "outer_race_fault",
+                        "normal",
+                        "ball_fault",
+                        "inner_race_fault"
+                    ],
+                    "y_true": [
+                        "outer_race_fault",
+                        "normal",
+                        "ball_fault",
+                        "inner_race_fault"
+                    ]
+                },
+                "unexpected_values": {},
+                "missing_counts": {
+                    "y_pred": 0,
+                    "y_true": 0
+                },
+                "allow_missing": false
+            }
+        },
+        {
+            "check_index": 9,
+            "name": "probability_matrix",
+            "passed": true,
+            "status": "PASS",
+            "message": "Probability matrix with shape (100, 4) is valid.",
+            "details": {
+                "shape": [
+                    100,
+                    4
+                ],
+                "expected_samples": 100,
+                "expected_classes": 4,
+                "shape_violations": {},
+                "non_finite_count": 0,
+                "below_zero_count": 0,
+                "above_one_count": 0,
+                "row_sum_tolerance": 1e-06,
+                "invalid_row_sum_indices": [],
+                "minimum_probability": 0.0,
+                "maximum_probability": 1.0
+            }
+        },
+        {
+            "check_index": 10,
+            "name": "score_range",
+            "passed": true,
+            "status": "PASS",
+            "message": "All scores are within the configured range.",
+            "details": {
+                "minimum": 0.0,
+                "maximum": 1.0,
+                "inclusive": true,
+                "allow_missing": false,
+                "missing_count": 0,
+                "infinite_count": 0,
+                "below_minimum_count": 0,
+                "above_maximum_count": 0,
+                "observed_minimum": 0.805,
+                "observed_maximum": 1.0
+            }
+        },
+        {
+            "check_index": 11,
+            "name": "metric_thresholds",
+            "passed": true,
+            "status": "PASS",
+            "message": "All 3 configured metric threshold checks passed.",
+            "details": {
+                "metrics": {
+                    "accuracy": 1.0,
+                    "macro_f1": 1.0,
+                    "weighted_f1": 1.0
+                },
+                "minimums": {
+                    "accuracy": 0.9,
+                    "macro_f1": 0.9,
+                    "weighted_f1": 0.9
+                },
+                "maximums": {},
+                "missing_metrics": [],
+                "non_numeric_metrics": {},
+                "non_finite_metrics": {},
+                "violations": {}
+            }
+        },
+        {
+            "check_index": 12,
+            "name": "confusion_matrix_consistency",
+            "passed": true,
+            "status": "PASS",
+            "message": "The supplied confusion matrix matches the predictions.",
+            "details": {
+                "labels": [
+                    "ball_fault",
+                    "inner_race_fault",
+                    "normal",
+                    "outer_race_fault"
+                ],
+                "expected_matrix": [
+                    [
+                        25,
+                        0,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        25,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        25,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        0,
+                        25
+                    ]
+                ],
+                "observed_matrix": [
+                    [
+                        25.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        25.0,
+                        0.0,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        0.0,
+                        25.0,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        0.0,
+                        0.0,
+                        25.0
+                    ]
+                ],
+                "expected_total": 100,
+                "observed_total": 100.0,
+                "finite": true,
+                "non_negative": true,
+                "integer_valued": true,
+                "matrices_equal": true,
+                "total_matches": true
+            }
+        }
+    ]
+}

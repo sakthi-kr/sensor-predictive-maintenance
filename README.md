@@ -299,3 +299,59 @@ Planned extensions:
 - add model monitoring reports
 - build a simple inference demo
 - connect the validation utilities from the ML testing and validation toolkit
+
+<!-- VALIDATION_TOOLKIT_SECTION_START -->
+## Reusable Validation Toolkit Integration
+
+The project integrates the separate `ml-testing-validation-toolkit` package to validate both the generated feature table and the saved model outputs.
+
+The validation workflow checks:
+
+- required feature and metadata columns
+- missing, infinite, and duplicate values
+- allowed bearing-fault labels
+- numerical feature ranges
+- class representation
+- prediction lengths and labels
+- probability-matrix validity
+- prediction-confidence ranges
+- metric regression thresholds
+- confusion-matrix consistency
+
+### Current Validation Result
+
+| Item | Result |
+|---|---:|
+| Overall status | PASS |
+| Checks passed | 13 / 13 |
+| Accuracy | 1.0000 |
+| Macro F1-score | 1.0000 |
+| Weighted F1-score | 1.0000 |
+
+Run the validation workflow after installing the local toolkit:
+
+```bash
+python -m pip install -e ../ml-testing-validation-toolkit
+python src/validate_pipeline.py
+```
+
+Generated outputs:
+
+```text
+results/sensor_validation_report.json
+results/sensor_validation_checks.csv
+results/sensor_validation_predictions.csv
+```
+
+Detailed documentation:
+
+```text
+docs/sensor_validation.md
+```
+
+### Important Limitation
+
+The current model uses a random window-level split. Similar or overlapping windows extracted from the same source recording may occur in both training and test sets.
+
+The strong current scores should therefore be treated as development-baseline results rather than evidence of production-level generalization. A future grouped evaluation should separate entire recordings or source files between training and testing.
+<!-- VALIDATION_TOOLKIT_SECTION_END -->
