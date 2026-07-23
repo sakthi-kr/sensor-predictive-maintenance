@@ -1,0 +1,63 @@
+name: Sensor Pipeline Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version:
+          - "3.10"
+          - "3.12"
+
+    env:
+      MPLBACKEND: Agg
+
+    steps:
+      - name: Check out sensor repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Display Python version
+        run: python --version
+
+      - name: Install project dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Install validation toolkit
+        run: |
+          python -m pip install "git+https://github.com/sakthi-kr/ml-testing-validation-toolkit.git@main"
+
+      - name: Verify validation toolkit
+        run: |
+          python -c "import ml_validation_toolkit; print(ml_validation_toolkit.__version__)"
+
+      - name: Compile source and test files
+        run: |
+          python -m compileall -q src
+          python -m compileall -q tests
+
+      - name: Run test suite
+        run: pytest
