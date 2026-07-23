@@ -32,3 +32,6 @@ Thumbs.db
 .env
 *.key
 .idea/
+
+# Generated single-file prediction outputs
+results/prediction_*.json
