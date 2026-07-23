@@ -1,5 +1,7 @@
 # Sensor Predictive Maintenance
 
+[![Sensor Pipeline Tests](https://github.com/sakthi-kr/sensor-predictive-maintenance/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/sakthi-kr/sensor-predictive-maintenance/actions/workflows/tests.yml)
+
 ## Summary
 
 A reproducible machine-learning pipeline for bearing fault classification from vibration sensor data. The project loads CWRU `.mat` files, extracts time-domain and frequency-domain features, trains a Random Forest baseline model, evaluates classification performance, and documents validation limitations such as possible leakage from window-level splitting.
