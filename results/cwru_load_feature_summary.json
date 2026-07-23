@@ -1,0 +1,48 @@
+{
+  "feature_table_path": "results/cwru_load_features.csv",
+  "manifest_path": "data/manifests/cwru_load_benchmark.csv",
+  "n_rows": 800,
+  "n_columns": 32,
+  "n_model_features": 14,
+  "n_source_recordings": 16,
+  "window_size": 2048,
+  "step_size": 1024,
+  "max_windows_per_file": 50,
+  "window_selection": "even",
+  "effective_sample_rate_hz": 12000,
+  "class_counts": {
+    "ball_fault": 200,
+    "inner_race_fault": 200,
+    "normal": 200,
+    "outer_race_fault": 200
+  },
+  "load_counts": {
+    "0": 200,
+    "1": 200,
+    "2": 200,
+    "3": 200
+  },
+  "windows_per_file": {
+    "100.mat": 50,
+    "105.mat": 50,
+    "106.mat": 50,
+    "107.mat": 50,
+    "108.mat": 50,
+    "118.mat": 50,
+    "119.mat": 50,
+    "120.mat": 50,
+    "121.mat": 50,
+    "130.mat": 50,
+    "131.mat": 50,
+    "132.mat": 50,
+    "133.mat": 50,
+    "97.mat": 50,
+    "98.mat": 50,
+    "99.mat": 50
+  },
+  "original_sample_rate_counts": {
+    "12000": 12,
+    "48000": 4
+  },
+  "validation_status": "passed"
+}

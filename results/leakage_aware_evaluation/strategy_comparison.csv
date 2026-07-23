@@ -1,0 +1,4 @@
+strategy,strategy_name,folds,window_accuracy_mean,window_accuracy_std,window_balanced_accuracy_mean,window_macro_f1_mean,window_macro_f1_std,recording_accuracy_mean,recording_accuracy_std,recording_macro_f1_mean,maximum_recording_overlap
+random_window,Random window split,4,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,16
+grouped_recording,Grouped recording CV,4,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0
+leave_one_load_out,Leave-one-load-out,4,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0

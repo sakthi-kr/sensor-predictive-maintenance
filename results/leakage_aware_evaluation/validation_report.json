@@ -1,0 +1,72 @@
+{
+  "overall_status": "passed",
+  "checks_passed": 13,
+  "checks_total": 13,
+  "checks": [
+    {
+      "name": "required_files",
+      "passed": true,
+      "details": "All required files exist."
+    },
+    {
+      "name": "dataset_dimensions",
+      "passed": true,
+      "details": "Observed={'n_windows': 800, 'n_source_recordings': 16, 'n_classes': 4, 'windows_per_recording': 50}; expected={'n_windows': 800, 'n_source_recordings': 16, 'n_classes': 4, 'windows_per_recording': 50}"
+    },
+    {
+      "name": "strategy_set",
+      "passed": true,
+      "details": "Observed=['grouped_recording', 'leave_one_load_out', 'random_window']"
+    },
+    {
+      "name": "four_folds_per_strategy",
+      "passed": true,
+      "details": "Fold counts={'grouped_recording': 4, 'leave_one_load_out': 4, 'random_window': 4}"
+    },
+    {
+      "name": "metric_ranges",
+      "passed": true,
+      "details": "All metrics are finite and within [0, 1]."
+    },
+    {
+      "name": "recording_overlap",
+      "passed": true,
+      "details": "Observed={'grouped_recording': 0, 'leave_one_load_out': 0, 'random_window': 16}; expected={'random_window': 16, 'grouped_recording': 0, 'leave_one_load_out': 0}"
+    },
+    {
+      "name": "tied_load_reporting",
+      "passed": true,
+      "details": "tied=True, hardest=None, easiest=None"
+    },
+    {
+      "name": "readme_current",
+      "passed": true,
+      "details": "README contains the current experiment."
+    },
+    {
+      "name": "readme_no_stale_claims",
+      "passed": true,
+      "details": "No stale baseline-only claims remain."
+    },
+    {
+      "name": "data_documentation",
+      "passed": true,
+      "details": "Dataset documentation is current."
+    },
+    {
+      "name": "report_rendered",
+      "passed": true,
+      "details": "The technical report contains rendered values."
+    },
+    {
+      "name": "portable_documentation_paths",
+      "passed": true,
+      "details": "No machine-specific absolute paths were found."
+    },
+    {
+      "name": "plot_files",
+      "passed": true,
+      "details": "All required plots are non-empty."
+    }
+  ]
+}

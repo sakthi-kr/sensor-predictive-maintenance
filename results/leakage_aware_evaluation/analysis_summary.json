@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "feature_table": "results/cwru_load_features.csv",
+    "n_windows": 800,
+    "n_source_recordings": 16,
+    "n_classes": 4,
+    "loads_hp": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "windows_per_recording": 50
+  },
+  "random_window_accuracy": 1.0,
+  "grouped_recording_accuracy": 1.0,
+  "leave_one_load_out_accuracy": 1.0,
+  "random_window_macro_f1": 1.0,
+  "grouped_recording_macro_f1": 1.0,
+  "leave_one_load_out_macro_f1": 1.0,
+  "random_minus_grouped_accuracy_gap": 0.0,
+  "random_minus_leave_one_load_out_accuracy_gap": 0.0,
+  "load_performance_tied": true,
+  "hardest_held_out_load_hp": null,
+  "hardest_load_accuracy": 1.0,
+  "hardest_load_macro_f1": 1.0,
+  "easiest_held_out_load_hp": null,
+  "easiest_load_accuracy": 1.0,
+  "easiest_load_macro_f1": 1.0,
+  "recording_error_counts": {
+    "random_window": 0,
+    "grouped_recording": 0,
+    "leave_one_load_out": 0
+  },
+  "leakage_checks": {
+    "random_window_maximum_overlapping_recordings": 16,
+    "grouped_recording_maximum_overlapping_recordings": 0,
+    "leave_one_load_out_maximum_overlapping_recordings": 0
+  },
+  "acquisition_limitation": "Normal recordings were originally sampled at 48 kHz and resampled to 12 kHz, while the selected fault recordings were collected at 12 kHz. Results may still reflect acquisition-domain differences in addition to bearing condition."
+}

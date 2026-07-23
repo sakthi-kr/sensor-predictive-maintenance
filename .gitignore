@@ -35,3 +35,9 @@ Thumbs.db
 
 # Generated single-file prediction outputs
 results/prediction_*.json
+
+# Small reproducibility metadata and evaluation result tables
+!data/manifests/
+!data/manifests/*.csv
+!results/leakage_aware_evaluation/
+!results/leakage_aware_evaluation/*.csv
